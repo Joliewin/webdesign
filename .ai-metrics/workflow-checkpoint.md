@@ -1,6 +1,7 @@
 # Workflow Checkpoint
 
 ## Prompt 10 findings review — resumed
+- Prompt 12 Revision 1 approved and saved in `design/PROMPTS_USED.md`; it explicitly requires story branches named `story-{n}-{slug}` from `dev` and retains the frontend Step 12 guidance without importing unconfirmed tools or commands. Prompt 12 was not executed. Prompt 13 Original remains approved/saved; no Prompt 11–13 execution is authorized.
 - The workflow now permits findings review after Prompt 10; earlier deferral notes are historical. Prompts 11–13 remain unexecuted.
 - Audit baseline: `design/CONSISTENCY_AUDIT.md`, Prompt 10 Revision 1; freshness not yet reverified for closure.
 - AUD-001: developer agrees Story 7 should depend on Story 4. Evidence: capability “Maintain Menu and Item Options”, Story 7, and critical-path graph. Resolution unresolved; file-update decisions pending.
@@ -20,6 +21,8 @@
 - Saved Prompt 10 Revision 1 still requires findings review to be deferred until after Prompts 11–13, contrary to the updated workflow and current request. It must not be silently edited; a new Prompt 10 revision and explicit approval are needed before the audit refresh. The changed Architecture, Stories, and Critical Path also require separate review decisions for affected saved Prompts 11–13.
 - Prompt 10 Revision 2 approved and saved; audit refresh authorized by the requested resolution workflow and pending execution.
 - Prompt 10 Revision 2 executed as a findings-only refresh. AUD-001, AUD-002, and AUD-003 are not reproduced; approved changes are recorded in the audit, whose separate review remains pending. No new findings identified. Prompt 11–13 impact decisions remain pending; do not mark audit review closed.
+- Prompt 11 impact decision: developer chose to leave Prompt 11 Revision 1 unchanged after review of the revised Architecture, Stories, and Critical Path. The developer separately requested its execution; implementation remains blocked pending the design-to-implementation commit/push readiness gate and required project decisions. Prompt 12 and 13 impact decisions remain pending.
+- Story branch convention confirmed by developer: `story-{number}-{slug}`, created from `dev`; `dev` remains the merge target and each merge requires separate developer authorization.
 
 ## Project and confirmed locations
 - Project: Yunnan Tasty Garden website

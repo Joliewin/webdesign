@@ -40,6 +40,7 @@
   - [Prompt 11 Revision 1](#prompt-11-revision-1)
 - [Prompt 12: Implement one story](#prompt-12-implement-one-story)
   - [Prompt 12 Original](#prompt-12-original)
+  - [Prompt 12 Revision 1](#prompt-12-revision-1)
 - [Prompt 13: Review a planned checkpoint](#prompt-13-review-a-planned-checkpoint)
   - [Prompt 13 Original](#prompt-13-original)
 
@@ -1084,8 +1085,9 @@ Report completed stories, files/components or responsibilities changed, tests an
 ## Prompt 12: Implement one story
 
 ### Prompt 12 Original
+
 - Approval: approved
-- Current: yes
+- Current: no
 
 ````
 # Implement One Story
@@ -1113,6 +1115,43 @@ Read `AGENTS.md` if present; `.ai-metrics/workflow-checkpoint.md`; `.ai-metrics/
 6. Merge to `dev` only after required checks and manual verification pass **and** the developer separately authorizes the merge.
 
 If the story is unclear or conflicts with the architecture, stop and ask rather than guessing. Report what was built, components or responsibilities changed, test counts where available, checks, metrics, blockers, and deviations.
+
+Check `design/STORIES.md` for a checkpoint reached by this work. If one is reached, perform only its applicable verified checks and **stop for developer review before later-wave work**. Hot-reload verification and a release tag are unconfirmed; do not impose or create them without approval.
+
+Approval of this prompt saves it only. Execution and merging require separate authorization and satisfaction of the applicable gates.
+````
+
+### Prompt 12 Revision 1
+- Approval: approved
+- Current: yes
+
+````
+# Implement One Story
+
+Implement **[TARGET_STORY_NUMBER_AND_TITLE]** from this repository’s `design/STORIES.md`. Replace the placeholder with the exact story number and title before use.
+
+## Read first
+
+Read `AGENTS.md` if present; `.ai-metrics/workflow-checkpoint.md`; `.ai-metrics/FILE_DEPENDENCIES.md`; `design/VISION.md`; `design/INTEGRATIONS.md`; `design/THREAT_MODEL.md`; `design/ARCHITECTURE.md`; `design/STORIES.md`; `design/CRITICAL_PATH.md`; `design/PROGRESS.md`; `design/AI_METRICS.md`; and the contracts, conventions, and examples required by the target story.
+
+## Before editing
+
+- Verify that the target exists, is not already done, its prerequisites are complete, its wave may start, and any preceding checkpoint has been reviewed. List the stories recorded as complete. If a check fails or is unclear, stop and report why.
+- Obtain a **separate explicit execution request** and verify the current design-to-implementation commit/push readiness gate. Recheck the gate whenever implementation resumes; stop if it is absent, stale, or unconfirmed.
+- Use the confirmed branch convention: create `story-{n}-{slug}` from `dev`, where `{n}` is the target story number and `{slug}` is a concise, lowercase, hyphen-separated title slug. Verify that `dev` exists and check for a conflicting branch before Git changes. Do not change the convention or treat this prompt as authorization to merge.
+- Identify the applicable project-confirmed build, lint, type-checking, tests, manual-verification, and other quality checks. If a required scope, interface, runtime, tool, or procedure is missing or unclear, stop and ask.
+
+## Implement the selected story
+
+1. Create the story branch using the confirmed convention. Immediately record the actual start timestamp in the project metrics log.
+2. Before authoring, independently estimate `est_human_hours` using the approved methodology, story scope, acceptance criteria, and applicable checks. Record the estimate and rationale in the metrics record and raw log; do not ask the developer to supply or approve the number, and never revise it retroactively. Ask only if required scope or methodology is unclear.
+3. Record actual story-work start, pause, resume, completion, and available provider-reported usage according to `design/AI_METRICS.md`. Never invent timestamps or usage; record missing information as unknown.
+4. Implement **only** the selected story’s approved acceptance criteria. This project includes both browser-facing UI and backend/data responsibilities where the story requires them; implement only the responsibilities specified by the story and approved Architecture. Add appropriate unit and integration tests alongside the work, including applicable threat-model negative cases. Do not add stories, change scope, or introduce unapproved tools or runtimes.
+5. Run all applicable, confirmed quality checks. Manually exercise intended behavior end-to-end where applicable and check relevant regressions. Report what was actually run, what passed or failed, and what was unavailable or not run.
+6. Record actual metrics and calculate leverage only when valid data exists. Update `design/PROGRESS.md` using one approved status token; do not mark the story done until its acceptance criteria and applicable checks are satisfied.
+7. Merge to `dev` only after required checks and manual verification pass **and** the developer separately authorizes the merge.
+
+If the story is unclear or conflicts with the Architecture, stop and ask rather than guessing. Report what was built, files/components or responsibilities changed, test counts where available, checks, metrics, blockers, and deviations.
 
 Check `design/STORIES.md` for a checkpoint reached by this work. If one is reached, perform only its applicable verified checks and **stop for developer review before later-wave work**. Hot-reload verification and a release tag are unconfirmed; do not impose or create them without approval.
 
