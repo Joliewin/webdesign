@@ -80,26 +80,40 @@
     /* Welcome / signature */
     /* Experience cards */
     /* Menu */
-    .menu-section { padding: 112px 0; background: var(--cream); }
-    .menu-head { display: flex; align-items: end; justify-content: space-between; gap: 28px; margin-bottom: 38px; }
+    .menu-section { padding: 48px 0 20px; background: linear-gradient(180deg, #d3b6a4 48px, var(--cream) 48px); }
+    .favorites-toolbar { position: sticky; z-index: 10; top: 78px; padding: 18px 20px 1px; margin: 0 -20px; isolation: isolate; }
+    .favorites-toolbar::before { position: absolute; z-index: -1; inset: 0 auto 0 50%; width: 100vw; content: ""; background: linear-gradient(180deg, #d3b6a4 0%, #ead7c5 50%, var(--cream) 100%); transform: translateX(-50%); pointer-events: none; }
+    .menu-head { display: flex; align-items: center; flex-wrap: wrap; gap: 20px 32px; margin-bottom: 0; padding-bottom: 22px; border-bottom: 1px solid #b99c8a; }
     .menu-head .section-intro { margin: 0; }
-    .menu-tabs { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 28px; }
-    .menu-tab { padding: 10px 18px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: transparent; font-size: 12px; font-weight: 700; cursor: pointer; transition: .2s ease; }
-    .menu-tab:hover, .menu-tab[aria-selected="true"] { color: white; border-color: var(--burgundy); background: var(--burgundy); }
-    .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .dish-card { overflow: hidden; background: white; border: 1px solid rgba(107,31,42,.06); box-shadow: 0 3px 14px rgba(43,33,29,.045); transition: transform .2s ease, box-shadow .2s ease; }
-    .dish-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .menu-head h2 { margin: 0; color: var(--burgundy-deep); font-size: clamp(2rem, 3.2vw, 3rem); letter-spacing: -.035em; }
+    .menu-head-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+    .menu-head-actions .button { min-height: 42px; padding: 9px 18px; font-size: 12px; }
+    .ai-decide { position: relative; overflow: hidden; gap: 12px; border-color: #6b1f2a; background: linear-gradient(120deg, #48151d, #8c3e35); box-shadow: 0 6px 18px rgba(107,31,42,.2); letter-spacing: .01em; }
+    .ai-decide span { display: grid; width: 25px; height: 25px; place-items: center; border-radius: 50%; background: rgba(255,255,255,.16); font-size: 14px; }
+    .ai-decide:hover { background: linear-gradient(120deg, #6b1f2a, #ad5747); box-shadow: 0 9px 22px rgba(107,31,42,.28); }
+    .menu-intro-title { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
+    .menu-intro-title .ai-decide { min-height: 42px; padding: 8px 18px; font-size: 12px; }
+    .menu-intro-title .ai-decide { color: #4b1e2c; border-color: #f7e6d8; background: linear-gradient(120deg, #fffaf3, #f5ddca); box-shadow: 0 5px 18px rgba(20,8,9,.25); }
+    .menu-intro-title .ai-decide span { color: #fff; background: linear-gradient(135deg, #a85949, #6b1f2a); }
+    .menu-intro-title .ai-decide:hover { color: #4b1e2c; border-color: #fff; background: linear-gradient(120deg, #fff, #fae9db); }
+    .menu-tabs { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 0 8px; margin: -1px 0 28px; }
+    .menu-tab { padding: 10px 14px; border: 1px solid transparent; border-top: 0; border-radius: 0 0 8px 8px; color: var(--muted); background: transparent; font-size: 12px; font-weight: 600; cursor: pointer; transition: color .2s ease, background .2s ease; }
+    .menu-tab:hover { color: var(--burgundy); }
+    .menu-tab[aria-selected="true"] { color: #fffaf3; border-color: var(--burgundy); background: var(--burgundy); box-shadow: 0 3px 8px rgba(107,31,42,.18); }
+    .menu-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; }
+    .dish-card { display: flex; align-items: flex-start; gap: 18px; min-width: 0; padding: 20px 0; border-bottom: 1px solid var(--line); background: transparent; }
+    .dish-card:hover .dish-image img { transform: scale(1.04); }
     .dish-card[hidden] { display: none; }
-    .dish-image { height: 215px; overflow: hidden; background: var(--cream-deep); }
+    .dish-image { flex: 0 0 145px; width: 145px; aspect-ratio: 1; overflow: hidden; border-radius: 10px; background: var(--cream-deep); }
     .dish-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
     .dish-card:hover .dish-image img { transform: scale(1.04); }
-    .dish-body { padding: 20px; }
+    .dish-body { flex: 1; min-width: 0; padding: 2px 0 0; }
     .dish-top { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
-    .dish-top h3 { margin: 0; font-size: 20px; }
-    .dish-price { color: var(--burgundy); font-size: 14px; font-weight: 700; white-space: nowrap; }
-    .dish-body p { min-height: 42px; margin: 10px 0 15px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+    .dish-top h3 { margin: 0; color: var(--burgundy-deep); font: 600 20px/1.3 var(--serif); }
+    .dish-price { color: var(--burgundy); font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .dish-body p { margin: 8px 0 12px; color: var(--muted); font-size: 13px; line-height: 1.6; }
     .dish-bottom { display: flex; align-items: center; justify-content: space-between; }
-    .dish-tag { color: var(--sage); font: 700 9px var(--eyebrow); letter-spacing: .12em; text-transform: uppercase; }
+    .dish-tag { color: #8c3e35; font: 600 10px var(--sans); letter-spacing: .08em; text-transform: uppercase; }
     .add-button { width: 36px; height: 36px; border: 1px solid var(--burgundy); border-radius: 50%; color: var(--burgundy); background: white; font-size: 21px; line-height: 1; cursor: pointer; transition: .2s ease; }
     .add-button:hover { color: white; background: var(--burgundy); }
     .menu-footnote { margin: 24px 0 0; color: var(--muted); font-size: 11px; }
@@ -120,6 +134,26 @@
     .location-detail h3 { margin-bottom: 10px; color: var(--burgundy); font-size: 21px; }
     .location-detail p { margin: 0; color: var(--muted); font-size: 13px; }
     .location-detail a { color: var(--burgundy); font-weight: 600; }
+    .visit-layout { display: grid; grid-template-columns: 1fr 1.05fr; overflow: hidden; background: #fffaf3; }
+    .visit-intro { position: relative; display: flex; min-height: 290px; flex-direction: column; align-items: flex-start; justify-content: flex-end; padding: clamp(28px, 4vw, 48px); color: white; background: linear-gradient(0deg, rgba(42,18,16,.94), rgba(48,20,17,.25)), url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85") center / cover; }
+    .visit-intro .eyebrow { color: #f2ad7a; }
+    .visit-intro h2 { max-width: 500px; margin-bottom: 14px; font-size: clamp(2.2rem, 4vw, 3.6rem); }
+    .visit-intro > p:last-child { max-width: 380px; margin: 0; color: rgba(255,255,255,.8); font-size: 14px; }
+    .visit-info { display: flex; flex-direction: column; justify-content: center; gap: 18px; padding: clamp(28px, 4vw, 48px); }
+    .visit-info h3 { margin: 0 0 9px; color: var(--burgundy); font: 600 11px/1.4 var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+    .visit-info p { margin: 0; color: var(--espresso); font-size: 15px; line-height: 1.7; }
+    .visit-info .visit-hours { padding-top: 16px; border-top: 1px solid var(--line); }
+    .visit-info .visit-phone { display: inline-block; margin-top: 5px; color: var(--muted); }
+    .visit-info .button { align-self: flex-start; }
+    .locations { padding: 17px 0 72px; }
+    .locations { background: var(--cream); }
+    .visit-layout { width: min(1200px, calc(100% - 48px)); margin: auto; grid-template-columns: 1fr 1fr; border: 1px solid #e4dacf; border-radius: 12px; box-shadow: 0 18px 50px rgba(43,33,29,.07); }
+    .visit-intro { min-height: 360px; justify-content: flex-end; background: linear-gradient(0deg, rgba(38,19,18,.88), rgba(38,19,18,.1) 85%), url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85") center / cover; }
+    .visit-intro h2 { font-size: clamp(2.5rem, 4vw, 3.5rem); }
+    .visit-info { gap: 22px; padding: clamp(32px, 5vw, 64px); }
+    .visit-info h3 { color: #8c3e35; font-size: 10px; letter-spacing: .16em; }
+    .visit-info .visit-hours { width: 100%; }
+    .visit-info .button { margin-top: 2px; }
 
     /* Story band */
     .story-band { position: relative; overflow: hidden; color: white; background: var(--burgundy-deep); }
@@ -133,17 +167,17 @@
     .story-page[hidden], .home-page[hidden] { display: none; }
     .menu-page[hidden] { display: none; }
     .menu-page { min-height: calc(100svh - 78px); padding-bottom: 90px; background: var(--cream); }
-    .menu-page-top { position: sticky; z-index: 15; top: 78px; display: grid; width: 100%; max-width: none; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 20px; margin: 0; padding: 12px max(24px, calc((100vw - 1200px) / 2)); border-bottom: 1px solid var(--line); background: var(--cream); }
-    .menu-page-intro { text-align: left; }
-    .menu-page-intro .eyebrow { margin-bottom: 5px; font-size: 9px; }
-    .menu-page-intro h1 { margin: 0 0 5px; color: var(--burgundy); font-size: clamp(32px, 4vw, 42px); }
-    .menu-page-intro p:last-child { max-width: 500px; margin: 0; color: var(--muted); font-size: 12px; }
-    .menu-category-nav { display: flex; flex-wrap: wrap; justify-content: flex-end; align-content: center; gap: 4px; }
-    .menu-category-nav a { flex: 0 0 auto; padding: 3px 8px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: 10px; font-weight: 700; white-space: nowrap; }
-    .menu-category-nav a:hover { color: white; border-color: var(--burgundy); background: var(--burgundy); }
-    .menu-list { padding-top: 28px; }
-    .menu-category { padding: 34px 0 20px; scroll-margin-top: 240px; }
-    .menu-category h2 { margin: 0 0 10px; padding-bottom: 12px; border-bottom: 2px solid var(--burgundy); color: var(--burgundy); font: 600 24px/1.25 var(--serif); }
+    .menu-page-intro { display: flex; align-items: center; min-height: 300px; padding: 64px max(24px, calc((100vw - 1200px) / 2)); color: white; background: linear-gradient(90deg, var(--burgundy-deep) 0%, rgba(72,21,29,.94) 45%, rgba(72,21,29,.25) 100%), url("https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1600&q=85") center 55% / cover; }
+    .menu-page-intro .eyebrow { color: #ffc49f; }
+    .menu-page-intro h1 { margin: 0 0 16px; color: white; font-size: clamp(48px, 6vw, 76px); }
+    .menu-page-intro p:last-child { max-width: 430px; margin: 0; color: rgba(255,255,255,.88); font-size: 16px; }
+    .menu-page-top { position: sticky; z-index: 15; top: 78px; width: 100%; max-width: none; margin: 0; padding: 12px max(24px, calc((100vw - 1200px) / 2)); border-bottom: 1px solid var(--line); background: #fffaf3; box-shadow: 0 4px 16px rgba(43,33,29,.06); }
+    .menu-category-nav { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: thin; }
+    .menu-category-nav a { flex: 0 0 auto; padding: 7px 14px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: 13px; font-weight: 700; white-space: nowrap; }
+    .menu-category-nav a:hover, .menu-category-nav a[aria-current="true"] { color: white; border-color: var(--burgundy); background: var(--burgundy); }
+    .menu-list { padding-top: 34px; }
+    .menu-category { padding: 34px 0 20px; scroll-margin-top: 165px; }
+    .menu-category h2 { margin: 0 0 10px; padding-bottom: 16px; border-bottom: 2px solid var(--burgundy); color: var(--burgundy); font: 600 clamp(25px, 3vw, 32px)/1.25 var(--serif); }
     .menu-category-toggle { display: flex; width: 100%; align-items: center; justify-content: flex-start; padding: 0; border: 0; color: inherit; background: transparent; font: inherit; text-align: left; cursor: pointer; }
     .menu-category-toggle::after { content: "−"; margin-left: 10px; color: var(--orange); font: 500 24px/1 var(--sans); }
     .menu-category-toggle[aria-expanded="false"]::after { content: "+"; }
@@ -172,18 +206,23 @@
     body.story-active .cart-button { display: none; }
 
     /* Footer, cart and toast */
-    .footer { padding: 62px 0 24px; color: rgba(255,255,255,.8); background: var(--burgundy-deep); }
-    .footer-main { display: flex; justify-content: space-between; gap: 48px; padding-bottom: 42px; }
+    .footer { padding: 28px 0; color: rgba(255,255,255,.8); background: var(--burgundy-deep); }
+    .footer-main { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .footer .brand { color: white; }
+    .footer-brand { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 14px; }
+    .footer-copyright { color: rgba(255,255,255,.52); font-size: 10px; }
     .footer .brand-caption { color: rgba(255,255,255,.58); }
-    .footer-about { max-width: 340px; margin: 18px 0 0; color: rgba(255,255,255,.65); font-size: 12px; }
-    .footer-links { display: flex; gap: 54px; }
-    .footer-column h3 { margin-bottom: 14px; color: white; font: 700 10px var(--eyebrow); letter-spacing: .16em; text-transform: uppercase; }
-    .footer-column a { display: block; margin: 8px 0; color: rgba(255,255,255,.68); font-size: 12px; }
+    .footer-about { max-width: 340px; margin: 10px 0 0; color: rgba(255,255,255,.65); font-size: 12px; }
+    .footer-links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px; }
+    .footer-column { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; }
+    .footer-column h3 { margin: 0; color: white; font: 700 10px var(--eyebrow); letter-spacing: .12em; text-transform: uppercase; }
+    .footer-column a { display: inline-block; margin: 0; color: rgba(255,255,255,.68); font-size: 12px; }
     .footer-column a:hover { color: #f2ad7a; }
-    .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.15); color: rgba(255,255,255,.52); font-size: 10px; }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,.15); color: rgba(255,255,255,.52); font-size: 10px; }
     .cart-button { position: fixed; z-index: 25; right: 24px; bottom: 24px; display: flex; align-items: center; gap: 10px; min-height: 54px; padding: 0 19px; border: 0; border-radius: 999px; color: white; background: var(--burgundy); box-shadow: 0 8px 24px rgba(43,33,29,.25); font-size: 12px; font-weight: 700; cursor: pointer; transition: .2s ease; }
     .cart-button:hover { background: var(--burgundy-hover); transform: translateY(-2px); }
+    .floating-ai { position: fixed; z-index: 25; right: 24px; bottom: 88px; display: none; min-height: 54px; padding: 0 19px; font-size: 12px; }
+    body.menu-active .floating-ai { display: inline-flex; }
     .cart-count { display: grid; width: 23px; height: 23px; place-items: center; border-radius: 50%; color: var(--burgundy); background: white; font-size: 11px; }
     .toast { position: fixed; z-index: 30; left: 50%; bottom: 28px; padding: 13px 20px; border-radius: 999px; color: white; background: var(--espresso); box-shadow: var(--shadow); font-size: 13px; opacity: 0; pointer-events: none; transform: translate(-50%, 15px); transition: .25s ease; }
     .toast.visible { opacity: 1; transform: translate(-50%, 0); }
@@ -213,19 +252,19 @@
       .hero-copy { font-size: 15px; }
       .hero-note { margin-top: 20px; }
       .scroll-cue { display: none; }
-      .menu-section, .locations { padding: 76px 0; }
+      .menu-section { padding: 32px 0 15px; background: linear-gradient(180deg, #d3b6a4 32px, var(--cream) 32px); }
+      .favorites-toolbar { top: 70px; }
       .menu-page { min-height: calc(100svh - 70px); padding-bottom: 60px; }
-      .menu-page-top { top: 70px; width: 100%; max-width: none; grid-template-columns: 1fr; gap: 4px; margin: 0; padding: 6px 14px; }
-      .menu-page-intro .eyebrow { margin-bottom: 2px; font-size: 8px; }
-      .menu-page-intro h1 { margin-bottom: 2px; font-size: 28px; }
-      .menu-page-intro p:last-child { font-size: 10px; line-height: 1.35; }
-      .menu-category-nav { flex-wrap: nowrap; justify-content: flex-start; gap: 4px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: thin; }
-      .menu-category { scroll-margin-top: 200px; }
+      .menu-page-intro { min-height: 250px; padding: 48px 18px; background-position: 62% center; }
+      .menu-page-intro h1 { font-size: 48px; }
+      .menu-page-intro p:last-child { max-width: 270px; font-size: 15px; }
+      .menu-page-top { top: 70px; padding: 10px 18px; }
+      .menu-category { scroll-margin-top: 145px; }
       .menu-category-items { grid-template-columns: 1fr; }
-      .menu-head { align-items: flex-start; flex-direction: column; }
+      .menu-head { align-items: flex-start; gap: 16px; }
       .menu-head > .button { margin-top: -12px; }
       .menu-grid { grid-template-columns: 1fr; }
-      .dish-image { height: 230px; }
+      .dish-image { flex-basis: 110px; width: 110px; }
       .story-grid { grid-template-columns: 1fr; }
       .story-photo { min-height: 300px; }
       .story-copy { padding: 64px 24px; }
@@ -240,14 +279,93 @@
       .story-images img:last-child { height: 160px; }
       .location-grid, .location-details { grid-template-columns: 1fr; }
       .location-card { min-height: 300px; padding: 25px; }
-      .footer-main { flex-direction: column; gap: 32px; }
-      .footer-links { justify-content: space-between; gap: 20px; }
+      .visit-layout { grid-template-columns: 1fr; }
+      .locations { padding: 10px 0 48px; }
+      .visit-layout { width: calc(100% - 36px); }
+      .visit-intro { min-height: 220px; padding: 28px; }
+      .visit-info { gap: 18px; padding: 28px; }
+      .footer-main { align-items: flex-start; flex-direction: column; gap: 12px; }
+      .footer-links { justify-content: flex-start; gap: 8px 20px; }
       .footer-bottom { flex-direction: column; gap: 6px; }
       .cart-button { right: 16px; bottom: 16px; min-height: 50px; }
+      .floating-ai { right: 16px; bottom: 78px; min-height: 50px; }
       .toast { bottom: 78px; width: max-content; max-width: calc(100% - 32px); }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+    /* Full menu: retain the site's sticky header and navigation. */
+    .menu-page { background: #f5f0e9; font-size: 15px; line-height: 1.6; }
+    .menu-page-intro { min-height: 108px; padding: 18px max(32px, calc((100vw - 1376px) / 2)); background-position: center 58%; }
+    .menu-page-intro .eyebrow { margin-bottom: 4px; color: #fff; font: 600 10px/1.4 var(--sans); letter-spacing: .22em; }
+    .menu-page-intro h1 { margin: 0 0 4px; font-size: clamp(30px, 3vw, 40px); }
+    .menu-page-intro p:last-child { max-width: none; font-size: 13px; }
+    .menu-layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 48px; width: min(1440px, 100%); margin: auto; padding: 32px 32px 0; align-items: start; }
+    .menu-page-top { position: sticky; top: 98px; display: flex; flex-direction: column; width: auto; max-height: calc(100vh - 118px); padding: 0; border: 0; background: transparent; box-shadow: none; }
+    .menu-page-top h2 { margin: 0 0 6px; font: 600 18px/1.25 var(--serif); }
+    .menu-category-nav { display: block; min-height: 0; overflow-y: auto; }
+    .menu-category-nav a { display: block; position: relative; padding: 6px 24px 6px 12px; border: 0; border-left: 2px solid transparent; border-radius: 0; color: var(--espresso); font-size: 13px; font-weight: 400; white-space: normal; }
+    .menu-category-nav a:hover, .menu-category-nav a[aria-current="location"] { color: var(--burgundy); border-color: var(--burgundy); background: linear-gradient(90deg, #eadbd2, transparent); }
+    .menu-category-nav a[aria-current="location"] { font-weight: 700; }
+    .menu-category-nav a[aria-current="location"]::after { position: absolute; right: 8px; content: "↗"; }
+    .menu-category-nav a[hidden], .menu-category[hidden], .menu-item[hidden] { display: none; }
+    .menu-search-wrap { position: relative; margin: 0 0 12px; }
+    .menu-search-wrap::before { position: absolute; z-index: 1; top: 14px; left: 14px; width: 12px; height: 12px; border: 1.7px solid #8c3e35; border-radius: 50%; content: ""; pointer-events: none; }
+    .menu-search-wrap::after { position: absolute; z-index: 1; top: 26px; left: 26px; width: 6px; height: 1.7px; border-radius: 2px; background: #8c3e35; content: ""; transform: rotate(45deg); transform-origin: left center; pointer-events: none; }
+    .menu-search { width: 100%; height: 44px; padding: 0 50px 0 38px; border: 1px solid #e3d6c9; border-radius: 10px; background: #fffcf8; color: var(--espresso); box-shadow: 0 3px 12px rgba(43,33,29,.04); font: 13px var(--sans); transition: border-color .2s ease, box-shadow .2s ease; }
+    .menu-search::placeholder { color: #8b7a70; }
+    .menu-search:focus { border-color: #a45d4d; outline: none; box-shadow: 0 0 0 3px rgba(164,93,77,.16); }
+    .menu-search::-webkit-search-cancel-button { display: none; }
+    .menu-search-clear { position: absolute; top: 0; right: 8px; height: 44px; padding: 0 5px; border: 0; background: transparent; color: #8c3e35; font-size: 11px; font-weight: 700; cursor: pointer; }
+    .menu-mobile-tools { display: none; }
+    .menu-list { width: auto; padding: 0; }
+    .menu-results-status { margin: 0; color: var(--muted); font-size: 12px; }
+    .menu-results-status:not(:empty) { margin-bottom: 12px; }
+    .menu-empty { padding: 24px 0; color: var(--muted); }
+    .menu-category { padding: 0; margin-bottom: 28px; scroll-margin-top: 88px; }
+    .menu-category h2 { position: sticky; z-index: 4; top: 78px; display: flex; align-items: center; gap: 16px; margin: 0; padding: 10px 12px; border: 0; background: linear-gradient(90deg, #e9ddd2, #f5f0e9); color: var(--burgundy); font: 600 30px/1.25 var(--serif); }
+    .menu-category h2::after { flex: 1; height: 1px; content: ""; background: #cbb3a2; }
+    .menu-category-toggle { display: inline-flex; width: auto; align-items: baseline; }
+    .menu-category-toggle::after { color: #8c3e35; }
+    .menu-category-items { column-gap: 48px; }
+    .menu-item { position: relative; padding: 10px 0; border-color: #e4dacf; }
+    .menu-item:hover { background: #fff; box-shadow: 8px 0 #fff, -8px 0 #fff; }
+    .menu-item-price { font-variant-numeric: tabular-nums; }
+    @media (max-width: 700px) {
+      .menu-page-intro { min-height: 95px; padding: 14px 18px; }
+      .menu-page-intro h1 { font-size: 29px; }
+      .menu-page-intro p:last-child { max-width: none; font-size: 12px; }
+      .menu-layout { display: block; padding: 0 18px; }
+      .menu-page-top { display: none; }
+      .menu-mobile-tools { position: sticky; z-index: 10; top: 70px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: end; gap: 10px; margin: 0 -18px 20px; padding: 8px 18px; background: #f5f0e9; }
+      .menu-mobile-select label { display: block; margin-bottom: 4px; color: var(--burgundy-deep); font: 600 14px/1.25 var(--serif); }
+      .menu-mobile-select select { width: 100%; height: 42px; padding: 0 8px; border: 1px solid #ddd0c2; border-radius: 4px; background: #fffcf8; color: var(--espresso); font: 13px var(--sans); }
+      .menu-mobile-tools .menu-search-wrap { margin: 0; }
+      .menu-category { scroll-margin-top: 165px; }
+      .menu-category h2 { top: 155px; font-size: 25px; }
+      .menu-category-items { grid-template-columns: 1fr; }
+    }
+    /* Let the navigation sit within the imagery, rather than above it. */
+    .site-header { margin-bottom: -78px; background: transparent; border-bottom: 0; backdrop-filter: none; transition: background .25s ease, box-shadow .25s ease; }
+    .site-header.is-scrolled, body.menu-open .site-header { background: rgba(48,23,23,.96); box-shadow: 0 4px 18px rgba(25,12,12,.14); backdrop-filter: blur(12px); }
+    .site-header .brand { color: #fffaf3; }
+    .site-header .brand-mark { border-color: rgba(255,250,243,.65); }
+    .site-header .brand-caption { color: rgba(255,250,243,.72); }
+    .site-header .nav-links { color: #fffaf3; }
+    .site-header .nav-links a:not(.button):hover { color: #f2bd9c; }
+    .site-header .nav-links .button { color: #fffaf3; border-color: rgba(255,250,243,.7); background: transparent; }
+    .site-header .nav-links .button:hover { color: var(--burgundy-deep); border-color: #fffaf3; background: #fffaf3; }
+    .site-header .menu-toggle { color: #fffaf3; }
+    .hero, .story-page .story-hero { min-height: 100svh; }
+    .hero-content, .story-page .story-hero-content { padding-top: 100px; }
+    .menu-page-intro { min-height: 186px; padding-top: 96px; }
+    @media (max-width: 700px) {
+      .site-header { margin-bottom: -70px; }
+      .site-header .nav-links { background: #301717; }
+      .site-header .nav-links a:not(.button) { border-color: rgba(255,255,255,.16); }
+      .hero, .story-page .story-hero { min-height: 100svh; }
+      .hero-content, .story-page .story-hero-content { padding-top: 92px; }
+      .menu-page-intro { min-height: 165px; padding-top: 84px; }
     }
   </style>
 </head>
@@ -279,24 +397,26 @@
           <h1>Come hungry.<br>Leave enchanted.</h1>
           <p class="hero-copy">Bright herbs, warming spice, hand-pulled noodles, and the kind of dishes that bring everyone closer to the table.</p>
           <div class="hero-actions">
-            <a class="button" href="#menu">Discover Our Menu <span aria-hidden="true">↗</span></a>
+            <a class="button" href="#menu">Full Menu <span aria-hidden="true">↗</span></a>
+            <a class="button button-outline" href="#favorites">Your Favorites</a>
             <a class="button button-outline" href="#locations">Find Our Location</a>
             <a class="button" href="#menu">Order Now</a>
           </div>
         </div>
       </div>
-      <a class="scroll-cue" href="#menu">Scroll to explore</a>
     </section>
 
-    <section class="menu-section" id="menu">
+    <section class="menu-section" id="favorites">
       <div class="container">
+        <div class="favorites-toolbar">
         <div class="menu-head">
           <div class="section-intro">
-            <p class="eyebrow">A few garden favorites</p>
-            <h2>Made to make you smile.</h2>
-            <p>Explore a little of what’s cooking. Our menu celebrates the bold, bright, comforting flavors of Yunnan.</p>
+            <h2>Your Favorites</h2>
           </div>
-          <a class="button button-outline" href="#locations">See us in person <span aria-hidden="true">↗</span></a>
+          <div class="menu-head-actions">
+            <button class="button ai-decide" type="button" id="ai-decide">Let AI Decide <span aria-hidden="true">✦</span></button>
+            <a class="button button-outline" href="#menu">View full menu <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
         <div class="menu-tabs" role="tablist" aria-label="Filter dishes">
           <button class="menu-tab" role="tab" aria-selected="true" data-filter="all">All favorites</button>
@@ -304,68 +424,54 @@
           <button class="menu-tab" role="tab" aria-selected="false" data-filter="small-plates">Small plates</button>
           <button class="menu-tab" role="tab" aria-selected="false" data-filter="from-the-wok">From the wok</button>
         </div>
+        </div>
         <div class="menu-grid" aria-live="polite">
           <article class="dish-card" data-category="noodles">
             <div class="dish-image"><img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=900&q=82" alt="Noodle soup garnished with fresh herbs" loading="lazy"></div>
-            <div class="dish-body"><div class="dish-top"><h3>Yunnan Crossing Bridge Noodles</h3><span class="dish-price">$16</span></div><p>A comforting signature bowl with rich broth, rice noodles, herbs, and bright accompaniments.</p><div class="dish-bottom"><span class="dish-tag">Guest favorite</span><button class="add-button" aria-label="Add Yunnan Crossing Bridge Noodles" data-dish="Yunnan Crossing Bridge Noodles">+</button></div></div>
+            <div class="dish-body"><div class="dish-top"><h3>Yunnan Crossing Bridge Noodles</h3><span class="dish-price">$16</span></div><p>A comforting signature bowl with rich broth, rice noodles, herbs, and bright accompaniments.</p><div class="dish-bottom"><span class="dish-tag">Guest favorite</span></div></div>
           </article>
           <article class="dish-card" data-category="small-plates">
             <div class="dish-image"><img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=900&q=82" alt="Steamed dumplings served with dipping sauce" loading="lazy"></div>
-            <div class="dish-body"><div class="dish-top"><h3>House Handmade Dumplings</h3><span class="dish-price">$12</span></div><p>Delicate wrappers, savory filling, and a house dipping sauce with a little warmth.</p><div class="dish-bottom"><span class="dish-tag">Made by hand</span><button class="add-button" aria-label="Add House Handmade Dumplings" data-dish="House Handmade Dumplings">+</button></div></div>
+            <div class="dish-body"><div class="dish-top"><h3>House Handmade Dumplings</h3><span class="dish-price">$12</span></div><p>Delicate wrappers, savory filling, and a house dipping sauce with a little warmth.</p><div class="dish-bottom"><span class="dish-tag">Made by hand</span></div></div>
           </article>
           <article class="dish-card" data-category="from-the-wok">
             <div class="dish-image"><img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=82" alt="Colorful stir-fried vegetables and rice" loading="lazy"></div>
-            <div class="dish-body"><div class="dish-top"><h3>Garden Wok Vegetables</h3><span class="dish-price">$15</span></div><p>Seasonal vegetables tossed over high heat with garlic, ginger, and a savory house sauce.</p><div class="dish-bottom"><span class="dish-tag">Plant-forward</span><button class="add-button" aria-label="Add Garden Wok Vegetables" data-dish="Garden Wok Vegetables">+</button></div></div>
+            <div class="dish-body"><div class="dish-top"><h3>Garden Wok Vegetables</h3><span class="dish-price">$15</span></div><p>Seasonal vegetables tossed over high heat with garlic, ginger, and a savory house sauce.</p><div class="dish-bottom"><span class="dish-tag">Plant-forward</span></div></div>
           </article>
           <article class="dish-card" data-category="noodles">
             <div class="dish-image"><img src="https://images.unsplash.com/photo-1555126634-323283e090fa?auto=format&fit=crop&w=900&q=82" alt="Spicy noodle dish with herbs and chili" loading="lazy"></div>
-            <div class="dish-body"><div class="dish-top"><h3>Spicy Yunnan Noodles</h3><span class="dish-price">$15</span></div><p>Springy noodles with chili fragrance, fresh greens, and a deeply savory finish.</p><div class="dish-bottom"><span class="dish-tag">A little fiery</span><button class="add-button" aria-label="Add Spicy Yunnan Noodles" data-dish="Spicy Yunnan Noodles">+</button></div></div>
+            <div class="dish-body"><div class="dish-top"><h3>Spicy Yunnan Noodles</h3><span class="dish-price">$15</span></div><p>Springy noodles with chili fragrance, fresh greens, and a deeply savory finish.</p><div class="dish-bottom"><span class="dish-tag">A little fiery</span></div></div>
           </article>
           <article class="dish-card" data-category="small-plates">
             <div class="dish-image"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=82" alt="Fresh salad with greens and herbs" loading="lazy"></div>
-            <div class="dish-body"><div class="dish-top"><h3>Cool Cucumber & Herb Salad</h3><span class="dish-price">$9</span></div><p>Crisp cucumber, garden herbs, and a bright dressing to wake up the table.</p><div class="dish-bottom"><span class="dish-tag">Fresh & bright</span><button class="add-button" aria-label="Add Cool Cucumber and Herb Salad" data-dish="Cool Cucumber & Herb Salad">+</button></div></div>
+            <div class="dish-body"><div class="dish-top"><h3>Cool Cucumber & Herb Salad</h3><span class="dish-price">$9</span></div><p>Crisp cucumber, garden herbs, and a bright dressing to wake up the table.</p><div class="dish-bottom"><span class="dish-tag">Fresh & bright</span></div></div>
           </article>
           <article class="dish-card" data-category="from-the-wok">
             <div class="dish-image"><img src="https://images.unsplash.com/photo-1515003197210-e0cd7184f8b5?auto=format&fit=crop&w=900&q=82" alt="Aromatic stir-fried dish served family style" loading="lazy"></div>
-            <div class="dish-body"><div class="dish-top"><h3>Wok-Tossed House Special</h3><span class="dish-price">$18</span></div><p>Our kitchen’s savory, aromatic special—made for sharing and best eaten hot.</p><div class="dish-bottom"><span class="dish-tag">For the table</span><button class="add-button" aria-label="Add Wok-Tossed House Special" data-dish="Wok-Tossed House Special">+</button></div></div>
+            <div class="dish-body"><div class="dish-top"><h3>Wok-Tossed House Special</h3><span class="dish-price">$18</span></div><p>Our kitchen’s savory, aromatic special—made for sharing and best eaten hot.</p><div class="dish-bottom"><span class="dish-tag">For the table</span></div></div>
           </article>
-        </div>
-        <p class="menu-footnote">Sample menu for this design concept. Please confirm current dishes, ingredients, prices, and allergen information with the restaurant.</p>
-      </div>
-    </section>
-
-    <section class="story-band">
-      <div class="story-grid">
-        <div class="story-photo" role="img" aria-label="A warm, inviting restaurant table"></div>
-        <div class="story-copy">
-          <p class="eyebrow">A little warmth in every bowl</p>
-          <h2>Some flavors feel like finding your way home.</h2>
-          <p>Yunnan cooking is generous by nature: a lively mix of local ingredients, layered traditions, and dishes made to be shared. We bring that spirit to every meal—one fragrant bowl and one welcoming table at a time.</p>
-          <a class="button button-light" href="#locations">Come on in <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
 
     <section class="locations" id="locations">
-      <div class="container">
-        <div class="center-heading">
-          <p class="eyebrow">Your table is waiting</p>
-          <h2>Find your way to the garden.</h2>
-          <p>Bring your favorite people. We’ll take care of the rest.</p>
+        <div class="visit-layout">
+          <div class="visit-intro">
+            <h2>Visit Us</h2>
+            <p>Bring your favorite people. We’ll take care of the rest.</p>
+          </div>
+          <div class="visit-info">
+            <div>
+              <h3>Location</h3>
+              <p>5115 Spring Mountain Road, Ste 103–105<br>Las Vegas, NV 89146</p>
+            </div>
+            <div class="visit-hours">
+              <h3>Opening hours</h3>
+              <p>Daily · 11:00 a.m.–9:30 p.m.<br><a class="visit-phone" href="tel:+17028264888">(702) 826-4888</a></p>
+            </div>
+            <a class="button" href="https://www.google.com/maps/dir/?api=1&amp;destination=5115+Spring+Mountain+Road+Ste+103-105%2C+Las+Vegas%2C+NV+89146" target="_blank" rel="noopener">Get directions <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
-        <div class="location-grid">
-          <article class="location-card" style="--location-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85')">
-            <div><p class="eyebrow">Come by for a bowl</p><h3>Yuannan Tasty Garden</h3><p>Warm hospitality, bright flavors, and a seat at the table.</p><a class="location-link" href="https://maps.google.com/?q=Yuannan+Tasty+Garden" target="_blank" rel="noopener">Get directions <span aria-hidden="true">↗</span></a></div>
-          </article>
-          <article class="location-card" style="--location-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=85')">
-            <div><p class="eyebrow">Gather around</p><h3>Make it a gathering</h3><p>Planning dinner with friends? There’s always room for one more.</p><a class="location-link" href="mailto:hello@yuannantastygarden.com">Ask us about your visit <span aria-hidden="true">↗</span></a></div>
-          </article>
-        </div>
-        <div class="location-details">
-          <div class="location-detail"><h3>Visit us</h3><p>Address and opening hours coming soon.<br><a href="https://maps.google.com/?q=Yuannan+Tasty+Garden" target="_blank" rel="noopener">Open in Maps ↗</a></p></div>
-          <div class="location-detail"><h3>Say hello</h3><p>For questions about the menu or your visit:<br><a href="mailto:hello@yuannantastygarden.com">hello@yuannantastygarden.com</a></p></div>
-        </div>
-      </div>
     </section>
   </main>
 
@@ -402,16 +508,20 @@
   </main>
 
   <main class="menu-page" id="menu-page" hidden>
-    <div class="container menu-page-top">
-      <header class="menu-page-intro" id="menu-page-title">
-        <p class="eyebrow">Yuannan Tasty Garden</p>
-        <h1>Our Menu</h1>
+    <header class="menu-page-intro" id="menu-page-title">
+      <div>
+        <div class="menu-intro-title">
+          <h1>Our Menu</h1>
+          <button class="button ai-decide" type="button">Let AI Decide <span aria-hidden="true">✦</span></button>
+        </div>
         <p>Explore the flavors of Yunnan, made for sharing and savoring.</p>
-      </header>
+      </div>
+    </header>
+    <div class="menu-layout">
+    <aside class="menu-page-top">
+      <h2>Explore the menu</h2>
+      <div class="menu-search-wrap"><input class="menu-search" type="search" placeholder="Search menu" aria-label="Search categories and dishes"><button class="menu-search-clear" type="button" aria-label="Clear menu search">Clear</button></div>
       <nav class="menu-category-nav" aria-label="Menu categories">
-      <a href="#category-rice">Rice</a>
-      <a href="#category-drinks">Drinks</a>
-      <a href="#category-dessert">Dessert</a>
       <a href="#category-appetizer">Appetizer</a>
       <a href="#category-fried-rice-noodle-rice-noodle">Fried Rice/Noodle/Rice Noodle</a>
       <a href="#category-rice-noodle-noodle-wonton">Rice Noodle/Noodle/Wonton</a>
@@ -425,43 +535,18 @@
       <a href="#category-dry-pot">Dry Pot</a>
       <a href="#category-vegetable">Vegetable</a>
       <a href="#category-soup">Soup</a>
+      <a href="#category-rice">Rice</a>
+      <a href="#category-drinks">Drinks</a>
+      <a href="#category-dessert">Dessert</a>
       </nav>
-    </div>
-    <div class="container menu-list">
-      <section class="menu-category" id="category-rice">
-        <h2>Rice</h2>
-        <div class="menu-category-items">
-          <div class="menu-item"><span class="menu-item-name">Rice</span><span class="menu-item-price">$1.50</span></div>
-        </div>
-      </section>
-      <section class="menu-category" id="category-drinks">
-        <h2>Drinks</h2>
-        <div class="menu-category-items">
-          <div class="menu-item"><span class="menu-item-name">Soda</span><span class="menu-item-price">$2.50</span></div>
-          <div class="menu-item"><span class="menu-item-name">Cola</span><span class="menu-item-price">$2.50</span></div>
-          <div class="menu-item"><span class="menu-item-name">Diet Coke</span><span class="menu-item-price">$2.50</span></div>
-          <div class="menu-item"><span class="menu-item-name">Sprite</span><span class="menu-item-price">$2.50</span></div>
-          <div class="menu-item"><span class="menu-item-name">Fanta</span><span class="menu-item-price">$2.50</span></div>
-          <div class="menu-item"><span class="menu-item-name">Arctic Soda</span><span class="menu-item-price">$3.99</span></div>
-          <div class="menu-item"><span class="menu-item-name">Fresh Watermelon</span><span class="menu-item-price">$4.99</span></div>
-          <div class="menu-item"><span class="menu-item-name">Fresh Watermelon Juice</span><span class="menu-item-price">$15.99</span></div>
-          <div class="menu-item"><span class="menu-item-name">Old Beijing Yogurt</span><span class="menu-item-price">$3.99</span></div>
-          <div class="menu-item"><span class="menu-item-name">Secret Plum Soup</span><span class="menu-item-price">$3.99</span></div>
-          <div class="menu-item"><span class="menu-item-name">Secret Wax Gourt Tea</span><span class="menu-item-price">$3.99</span></div>
-          <div class="menu-item"><span class="menu-item-name">Jdb Herbal Tea</span><span class="menu-item-price">$3.50</span></div>
-          <div class="menu-item"><span class="menu-item-name">Ice Black Tea</span><span class="menu-item-price">$3.50</span></div>
-          <div class="menu-item"><span class="menu-item-name">Air Forest Bubble Water</span><span class="menu-item-price">$3.99</span></div>
-          <div class="menu-item"><span class="menu-item-name">Water</span><span class="menu-item-price">$2.00</span></div>
-        </div>
-      </section>
-      <section class="menu-category" id="category-dessert">
-        <h2>Dessert</h2>
-        <div class="menu-category-items">
-          <div class="menu-item"><span class="menu-item-name">Osmanthus Homemade Fermented Glutinous Rice Balls</span><span class="menu-item-price">$13.99</span></div>
-          <div class="menu-item"><span class="menu-item-name">Green Bean Soup</span><span class="menu-item-price">$4.50</span></div>
-          <div class="menu-item"><span class="menu-item-name">Crystal Sugar Tremella Snow Pear Soup</span><span class="menu-item-price">$4.50</span></div>
-        </div>
-      </section>
+    </aside>
+    <div class="menu-list">
+      <div class="menu-mobile-tools">
+        <div class="menu-mobile-select"><label for="mobile-category">Explore the menu</label><select id="mobile-category"></select></div>
+        <div class="menu-search-wrap"><input class="menu-search" type="search" placeholder="Search menu" aria-label="Search categories and dishes"><button class="menu-search-clear" type="button" aria-label="Clear menu search">Clear</button></div>
+      </div>
+      <p class="menu-results-status" aria-live="polite"></p>
+      <p class="menu-empty" hidden>No dishes or categories found. Try another search.</p>
       <section class="menu-category" id="category-appetizer">
         <h2>Appetizer</h2>
         <div class="menu-category-items">
@@ -697,29 +782,68 @@
           <div class="menu-item"><span class="menu-item-name">Bean Curd Soup w.Green Veg</span><span class="menu-item-price">$14.99</span></div>
         </div>
       </section>
+      <section class="menu-category" id="category-rice">
+        <h2>Rice</h2>
+        <div class="menu-category-items">
+          <div class="menu-item"><span class="menu-item-name">Rice</span><span class="menu-item-price">$1.50</span></div>
+        </div>
+      </section>
+      <section class="menu-category" id="category-drinks">
+        <h2>Drinks</h2>
+        <div class="menu-category-items">
+          <div class="menu-item"><span class="menu-item-name">Soda</span><span class="menu-item-price">$2.50</span></div>
+          <div class="menu-item"><span class="menu-item-name">Cola</span><span class="menu-item-price">$2.50</span></div>
+          <div class="menu-item"><span class="menu-item-name">Diet Coke</span><span class="menu-item-price">$2.50</span></div>
+          <div class="menu-item"><span class="menu-item-name">Sprite</span><span class="menu-item-price">$2.50</span></div>
+          <div class="menu-item"><span class="menu-item-name">Fanta</span><span class="menu-item-price">$2.50</span></div>
+          <div class="menu-item"><span class="menu-item-name">Arctic Soda</span><span class="menu-item-price">$3.99</span></div>
+          <div class="menu-item"><span class="menu-item-name">Fresh Watermelon</span><span class="menu-item-price">$4.99</span></div>
+          <div class="menu-item"><span class="menu-item-name">Fresh Watermelon Juice</span><span class="menu-item-price">$15.99</span></div>
+          <div class="menu-item"><span class="menu-item-name">Old Beijing Yogurt</span><span class="menu-item-price">$3.99</span></div>
+          <div class="menu-item"><span class="menu-item-name">Secret Plum Soup</span><span class="menu-item-price">$3.99</span></div>
+          <div class="menu-item"><span class="menu-item-name">Secret Wax Gourt Tea</span><span class="menu-item-price">$3.99</span></div>
+          <div class="menu-item"><span class="menu-item-name">Jdb Herbal Tea</span><span class="menu-item-price">$3.50</span></div>
+          <div class="menu-item"><span class="menu-item-name">Ice Black Tea</span><span class="menu-item-price">$3.50</span></div>
+          <div class="menu-item"><span class="menu-item-name">Air Forest Bubble Water</span><span class="menu-item-price">$3.99</span></div>
+          <div class="menu-item"><span class="menu-item-name">Water</span><span class="menu-item-price">$2.00</span></div>
+        </div>
+      </section>
+      <section class="menu-category" id="category-dessert">
+        <h2>Dessert</h2>
+        <div class="menu-category-items">
+          <div class="menu-item"><span class="menu-item-name">Osmanthus Homemade Fermented Glutinous Rice Balls</span><span class="menu-item-price">$13.99</span></div>
+          <div class="menu-item"><span class="menu-item-name">Green Bean Soup</span><span class="menu-item-price">$4.50</span></div>
+          <div class="menu-item"><span class="menu-item-name">Crystal Sugar Tremella Snow Pear Soup</span><span class="menu-item-price">$4.50</span></div>
+        </div>
+      </section>
+    </div>
     </div>
   </main>
 
   <footer class="footer">
     <div class="container">
       <div class="footer-main">
-        <div>
-          <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">雲</span><span><span class="brand-name">Yuannan Tasty Garden</span><span class="brand-caption">Flavors of Southwest China</span></span></a>
-          <p class="footer-about">Bright herbs, warming spice, and generous hospitality. There’s always a place for you at our table.</p>
+        <div class="footer-brand">
+          <a class="brand" href="#home"><span class="brand-name">Yuannan Tasty Garden</span></a>
+          <span class="footer-copyright">© <span id="year"></span> Yuannan Tasty Garden</span>
         </div>
         <div class="footer-links">
-          <div class="footer-column"><h3>Explore</h3><a href="#our-story">Our Story</a><a href="#menu">The Menu</a></div>
-          <div class="footer-column"><h3>Say hello</h3><a href="#locations">Visit Us</a><a href="mailto:hello@yuannantastygarden.com">Email Us</a><a href="#home">Instagram ↗</a></div>
+          <div class="footer-column"><a href="#our-story">Our Story</a><a href="#menu">The Menu</a></div>
+          <div class="footer-column"><a href="#locations">Visit Us</a><a href="mailto:hello@yuannantastygarden.com">Email Us</a><a href="#home">Instagram ↗</a></div>
         </div>
       </div>
-      <div class="footer-bottom"><span>© <span id="year"></span> Yuannan Tasty Garden</span><span>Made for good food and good company.</span></div>
     </div>
   </footer>
 
   <button class="cart-button" type="button" aria-label="Your order, 0 items" id="cart-button"><span aria-hidden="true">♧</span> Your Order <span class="cart-count" id="cart-count">0</span></button>
+  <button class="button ai-decide floating-ai" type="button">AI Decide <span aria-hidden="true">✦</span></button>
   <div class="toast" role="status" aria-live="polite" id="toast"></div>
 
   <script>
+    const siteHeader = document.querySelector('.site-header');
+    const updateHeader = () => siteHeader.classList.toggle('is-scrolled', window.scrollY > 20);
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav-links');
     const homePage = document.querySelector('#home-page');
@@ -822,6 +946,81 @@
       tabs[next].click();
     });
 
+    const categoryLinks = [...document.querySelectorAll('.menu-category-nav a')];
+    const categories = [...document.querySelectorAll('.menu-category')];
+    const mobileCategory = document.querySelector('#mobile-category');
+    const menuSearches = [...document.querySelectorAll('.menu-search')];
+    const categoryNav = document.querySelector('.menu-category-nav');
+    let lastActiveCategory = null;
+    const shortNames = {
+      'Fried Rice/Noodle/Rice Noodle': 'Fried Rice & Noodles',
+      'Rice Noodle/Noodle/Wonton': 'Noodles & Wonton'
+    };
+    categoryLinks.forEach(link => { link.textContent = shortNames[link.textContent] || link.textContent; });
+    const menuData = categories.map((category, index) => ({
+      category,
+      link: categoryLinks[index],
+      title: category.querySelector('h2').textContent.toLowerCase(),
+      items: [...category.querySelectorAll('.menu-item')]
+    }));
+    const updateActiveCategory = () => {
+      if (menuPage.hidden) return;
+      const visible = categories.filter(category => !category.hidden);
+      const threshold = window.matchMedia('(max-width: 700px)').matches ? 165 : 88;
+      const active = visible.reduce((current, category) =>
+        category.getBoundingClientRect().top <= threshold + 5 ? category : current, visible[0]);
+      categoryLinks.forEach(link => {
+        if (active && link.hash === `#${active.id}`) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+      if (active && active.id !== lastActiveCategory) {
+        lastActiveCategory = active.id;
+        const activeLink = categoryLinks.find(link => link.hash === `#${active.id}`);
+        if (activeLink && categoryNav.getClientRects().length) {
+          const navRect = categoryNav.getBoundingClientRect();
+          const linkRect = activeLink.getBoundingClientRect();
+          if (linkRect.bottom > navRect.bottom) categoryNav.scrollTop += linkRect.bottom - navRect.bottom;
+          else if (linkRect.top < navRect.top) categoryNav.scrollTop -= navRect.top - linkRect.top;
+        }
+      }
+      if (active) mobileCategory.value = active.id;
+    };
+    window.addEventListener('scroll', updateActiveCategory, { passive: true });
+    mobileCategory.addEventListener('change', () => {
+      document.getElementById(mobileCategory.value)?.scrollIntoView({ behavior: 'smooth' });
+    });
+    const filterMenu = value => {
+      const query = value.trim().toLowerCase();
+      let count = 0;
+      mobileCategory.replaceChildren();
+      menuData.forEach(({ category, link, title, items }) => {
+        const categoryMatch = title.includes(query) || link.textContent.toLowerCase().includes(query);
+        let matches = 0;
+        items.forEach(item => {
+          const match = categoryMatch || item.querySelector('.menu-item-name').textContent.toLowerCase().includes(query);
+          item.hidden = !match;
+          if (match) matches++;
+        });
+        category.hidden = link.hidden = matches === 0;
+        count += matches;
+        if (matches) mobileCategory.add(new Option(link.textContent, category.id));
+      });
+      mobileCategory.disabled = count === 0;
+      document.querySelector('.menu-results-status').textContent = query ? `${count} ${count === 1 ? 'dish' : 'dishes'} found` : '';
+      document.querySelector('.menu-empty').hidden = count !== 0;
+      updateActiveCategory();
+    };
+    menuSearches.forEach(input => input.addEventListener('input', () => {
+      menuSearches.forEach(other => { if (other !== input) other.value = input.value; });
+      filterMenu(input.value);
+    }));
+    document.querySelectorAll('.menu-search-clear').forEach(button => button.addEventListener('click', () => {
+      const input = button.parentElement.querySelector('.menu-search');
+      input.value = '';
+      input.dispatchEvent(new Event('input'));
+      input.focus();
+    }));
+
     document.querySelectorAll('.menu-category').forEach((category, index) => {
       const heading = category.querySelector('h2');
       const items = category.querySelector('.menu-category-items');
@@ -840,9 +1039,22 @@
         items.hidden = expanded;
       });
     });
+    filterMenu('');
 
     let cartCount = 0;
     const cart = document.querySelector('#cart-button');
+    const floatingAi = document.querySelector('.floating-ai');
+    const footer = document.querySelector('.footer');
+    const positionCart = () => {
+      const gap = window.matchMedia('(max-width: 700px)').matches ? 16 : 24;
+      const footerVisible = Math.max(0, window.innerHeight - footer.getBoundingClientRect().top);
+      cart.style.bottom = `${gap + footerVisible}px`;
+      floatingAi.style.width = `${cart.offsetWidth}px`;
+      floatingAi.style.bottom = `${gap + footerVisible + cart.offsetHeight + 10}px`;
+    };
+    window.addEventListener('scroll', positionCart, { passive: true });
+    window.addEventListener('resize', positionCart);
+    positionCart();
     const count = document.querySelector('#cart-count');
     const toast = document.querySelector('#toast');
     let toastTimer;

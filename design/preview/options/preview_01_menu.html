@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Menu design options | Yuannan Tasty Garden</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f8f1e7;color:#2b211d;font:15px/1.6 Inter,sans-serif}button,input,select{font:inherit}button,a,select{cursor:pointer}a{color:inherit;text-decoration:none}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #d96b32;outline-offset:3px}.switcher{background:#30231f;color:white;padding:13px 24px;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap}.switcher span{margin-right:8px;font-weight:600}.switcher button{border:1px solid #a69286;border-radius:4px;background:transparent;color:white;padding:7px 13px}.switcher button[aria-pressed=true]{background:#fff4e5;color:#48151d;border-color:#fff4e5}.site-header{height:72px;background:#fffaf3;display:flex;align-items:center;justify-content:space-between;padding:0 max(24px,calc((100% - 1200px)/2));color:#6b1f2a}.brand{font:600 20px Bitter,serif}.site-links{display:flex;gap:28px;font-size:13px;font-weight:600}.hero{min-height:240px;display:flex;align-items:center;padding:45px max(24px,calc((100% - 1200px)/2));color:white;background:linear-gradient(90deg,#48151d 0%,rgba(72,21,29,.9) 48%,rgba(72,21,29,.25)),url('https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1600&q=85') center 55%/cover}.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#ffc49f;font-weight:700}.hero h1{font:600 clamp(42px,5vw,66px)/1.1 Bitter,serif;margin:12px 0}.hero p{margin:0;color:#f5e8d6}.wrap{max-width:1200px;margin:auto;padding:42px 24px 90px}.option-caption{margin:0 0 24px;color:#665750;font-size:13px}.layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:30px;align-items:start}.sidebar{position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow:auto;background:#f0e1cf;padding:22px 18px;border-radius:8px}.sidebar h2,.index-title{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#715348;margin:0 0 14px}.sidebar a{display:block;padding:8px 12px;border-left:3px solid transparent;border-radius:3px;color:#604b42;font-size:13px}.sidebar a:hover{background:#e7d3bd}.sidebar a.active{border-color:#a63c36;background:#fff8ee;color:#6b1f2a;font-weight:700}.menu-content{min-width:0;background:#fffdf9;border:1px solid #eadccd;border-radius:8px;padding:34px 40px;box-shadow:0 8px 28px rgba(72,21,29,.04)}.search{display:block;width:100%;max-width:420px;border:1px solid #d5c6b5;background:#fffdf9;border-radius:4px;padding:12px 15px;margin-bottom:32px}.category{scroll-margin-top:20px;margin-bottom:48px}.category h2{font:600 29px Bitter,serif;color:#6b1f2a;border-bottom:1px solid #b69181;padding-bottom:15px;margin:0 0 8px}.items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 42px}.item{display:flex;justify-content:space-between;gap:18px;padding:14px 0;border-bottom:1px solid #e7dbcc}.price{white-space:nowrap;color:#6b1f2a;font-weight:700}.mobile-select{display:none}.index-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:50px}.index-grid a{background:#fffaf3;border:1px solid #e6d8c7;padding:18px 16px;color:#6b1f2a;font:600 16px Bitter,serif;min-height:74px;display:flex;align-items:center;justify-content:space-between}.index-grid a:hover{background:#6b1f2a;color:white}.index-grid a span{font:20px Inter,sans-serif;color:#c66c45}.index-layout{max-width:950px;margin:auto}.select-bar{display:flex;align-items:end;gap:18px;margin-bottom:32px}.select-bar label{display:block;font-size:12px;font-weight:700;color:#665750}.select-bar select{display:block;margin-top:6px;width:300px;max-width:100%;padding:12px;background:#fffaf3;border:1px solid #cdbbab;color:#48151d}.select-bar .search{margin:0}.panel{background:#fffaf3;padding:36px 42px;border:1px solid #eadccd}.panel .category{margin:0}.empty{color:#665750}.back{display:inline-block;margin-bottom:20px;color:#6b1f2a;font-size:13px;font-weight:700}
+@media(max-width:700px){.site-header{height:60px}.site-links{gap:12px;font-size:11px}.brand{font-size:15px}.hero{min-height:210px}.wrap{padding:28px 18px 65px}.layout{display:block}.sidebar{display:none}.menu-content{padding:24px 18px}.mobile-select{display:block;margin-bottom:24px}.mobile-select select{width:100%;padding:12px;background:#fffaf3;border:1px solid #cdbbab}.items{grid-template-columns:1fr}.index-grid{grid-template-columns:repeat(2,1fr)}.select-bar{align-items:stretch;flex-direction:column}.select-bar select{width:100%}.panel{padding:25px 20px}.category h2{font-size:25px}}
+/* Refined menu layout */
+body { background: #f5f0e9; }
+.site-header { padding-inline: max(32px, calc((100% - 1440px) / 2)); }
+.hero { min-height: 215px; padding: 38px max(32px, calc((100% - 1440px) / 2)); }
+.hero h1 { font-size: clamp(44px, 4.5vw, 64px); }
+.wrap { max-width: 1440px; padding: 32px 32px 90px; }
+.layout { grid-template-columns: 220px minmax(0, 1fr); gap: 48px; }
+.sidebar { background: transparent; border-radius: 0; padding: 12px 0; }
+.sidebar h2 { color: #9a7665; margin: 0 0 18px 14px; }
+.sidebar a { padding: 7px 12px; border-radius: 0; font-size: 13px; }
+.sidebar a:hover { background: #eee5db; }
+.sidebar a.active { background: transparent; border-color: #b96549; }
+.menu-content { padding: 0; border: 0; border-radius: 0; box-shadow: none; background: transparent; }
+.search { max-width: none; height: 52px; padding: 12px 18px; border: 1px solid #ddd0c2; background: #fffcf8; border-radius: 3px; }
+.category { margin-bottom: 48px; }
+.category h2 { display: flex; align-items: baseline; gap: 20px; color: #48151d; font-size: 30px; border: 0; padding: 0; margin: 0 0 10px; }
+.category h2::after { content: ''; height: 1px; flex: 1; background: #d7c7b8; }
+.items { gap: 0 48px; }
+.item { padding: 15px 0; border-color: #e4dacf; font-size: 14px; }
+.price { font-size: 13px; color: #865043; }
+@media (min-width: 1100px) { .items { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 700px) {
+  .site-header { padding-inline: 18px; }
+  .hero { min-height: 190px; padding: 35px 18px; }
+  .wrap { padding: 24px 18px 60px; }
+  .menu-content { padding: 0; }
+  .mobile-select select { min-height: 48px; border-radius: 3px; }
+  .category h2 { font-size: 25px; }
+}
+/* Finishing details */
+.site-header { border-bottom: 1px solid #e8ded2; }
+.site-links a { transition: color .2s ease; }
+.site-links a:hover { color: #c16c4b; }
+.hero { background-position: center 58%; }
+.eyebrow { font-size: 10px; letter-spacing: .22em; }
+.hero p { font-size: 15px; }
+.sidebar { scrollbar-width: thin; scrollbar-color: #c7b5a4 transparent; }
+.sidebar a { transition: color .18s ease, border-color .18s ease, background .18s ease; }
+.sidebar a.active { color: #6b1f2a; }
+.search { color: #2b211d; transition: border-color .2s ease, box-shadow .2s ease; }
+.search::placeholder { color: #927e72; }
+.search:focus { outline: none; border-color: #aa745d; box-shadow: 0 0 0 3px rgba(170,116,93,.12); }
+.category h2 { letter-spacing: -.025em; }
+.item { align-items: baseline; line-height: 1.45; }
+.item span:first-child { max-width: 90%; }
+.price { font-variant-numeric: tabular-nums; }
+.empty { padding: 28px 0; }
+.mobile-select label { display: block; margin-bottom: 7px; color: #765a4d; font-size: 12px; font-weight: 700; }
+@media (max-width: 700px) { .search { margin-bottom: 28px; } .item { padding: 14px 0; } }
+/* Search and reading refinements */
+.search-wrap { position: relative; margin-bottom: 32px; }
+.search-wrap .search { margin: 0; padding-left: 48px; padding-right: 120px; }
+.search-icon { position: absolute; left: 17px; top: 50%; transform: translateY(-53%); color: #8e6d5c; font-size: 26px; line-height: 1; pointer-events: none; }
+.search-hint { position: absolute; right: 17px; top: 50%; transform: translateY(-50%); color: #a18e80; font-size: 11px; letter-spacing: .05em; text-transform: uppercase; pointer-events: none; }
+.results-status:not(:empty) { margin: -17px 0 24px; color: #795f51; font-size: 13px; }
+.sidebar a { line-height: 1.4; }
+.category h2::after { opacity: .8; }
+.item { transition: background-color .18s ease, box-shadow .18s ease; }
+.item:hover { background: #fff; box-shadow: 8px 0 #fff, -8px 0 #fff; }
+.item:hover .price { color: #6b1f2a; }
+@media (max-width: 700px) { .search-wrap { margin-bottom: 28px; } .search-hint { display: none; } .search-wrap .search { padding-right: 15px; } }
+/* Highlight the current menu category */
+.sidebar a { border-left: 3px solid transparent; margin: 2px 0; padding: 9px 14px; }
+.sidebar a.active { position: relative; background: linear-gradient(90deg, #ead8ca, rgba(234,216,202,.22)); border-left-color: #9c4739; color: #6b1f2a; font-weight: 700; border-radius: 0 4px 4px 0; }
+.sidebar a.active::after { content: "\2197"; position: absolute; right: 12px; color: #a75a45; font-size: 14px; }
+.sidebar a.active:hover { background: linear-gradient(90deg, #e5d0c0, rgba(234,216,202,.38)); }
+/* Persistent menu navigation */
+.hero { min-height: 108px; padding-top: 12px; padding-bottom: 12px; }
+.hero h1 { font-size: clamp(30px, 3vw, 40px); margin: 3px 0; }
+.hero .eyebrow { margin: 0; }
+.hero p { font-size: 13px; }
+.sidebar { display: flex; flex-direction: column; max-height: calc(100vh - 40px); overflow: hidden; }
+.sidebar .search-wrap { flex: none; margin: 0 0 12px; }
+.sidebar .search { height: 42px; padding-left: 39px; padding-right: 10px; font-size: 13px; }
+.sidebar .search-icon { left: 13px; font-size: 22px; }
+.category-links { overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+.category-links a[hidden] { display: none; }
+.mobile-tools { display: none; }
+@media (max-width: 700px) {
+  .hero { min-height: 95px; padding: 10px 18px; }
+  .hero h1 { font-size: 29px; }
+  .hero p { font-size: 12px; }
+  .mobile-tools { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; position: sticky; top: 0; z-index: 10; padding: 10px 0; background: #f5f0e9; }
+  .mobile-select, .mobile-tools .search-wrap { margin: 0; }
+  .mobile-select label { font-size: 11px; margin: 0 0 3px; }
+  .mobile-select select { min-height: 42px; padding: 8px; }
+  .mobile-tools .search-wrap { align-self: end; }
+  .mobile-tools .search { height: 42px; padding-left: 38px; font-size: 13px; }
+  .mobile-tools .search-icon { left: 12px; }
+  .category { scroll-margin-top: 95px; }
+}
+/* Menu navigation heading */
+.sidebar h2 { margin: 0 0 6px; padding: 0; color: #48151d; font: 600 18px/1.25 Bitter, serif; letter-spacing: -.02em; text-transform: none; }
+.sidebar .search-wrap { margin-bottom: 12px; }
+@media (max-width: 700px) { .mobile-select label { color: #48151d; font: 600 14px/1.25 Bitter, serif; letter-spacing: -.01em; } }
+/* Persistent section headings and search controls */
+.category h2 { position: sticky; top: 0; z-index: 4; background: #f5f0e9; padding: 10px 0; }
+.category-toggle { display: inline-flex; align-items: baseline; gap: 10px; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.category-toggle span { color: #ae644b; font: 400 24px/1 Inter, sans-serif; }
+.items[hidden] { display: none; }
+.search-wrap .search { padding-right: 48px; }
+.search-clear { position: absolute; right: 7px; top: 50%; transform: translateY(-50%); border: 0; background: transparent; color: #765a4d; font-size: 11px; font-weight: 700; line-height: 1; padding: 5px; cursor: pointer; }
+.search-clear[hidden] { display: none; }
+.search::-webkit-search-cancel-button { display: none; }
+@media (max-width: 700px) { .category h2 { top: 85px; } .mobile-tools .search { padding-right: 48px; } }
+/* Category heading emphasis */
+.category h2 { padding: 10px 12px; background: linear-gradient(90deg, #e9ddd2 0%, #f5f0e9 100%); border-left: 0; color: #6b1f2a; }
+.category h2::after { background: #cbb3a2; }
+.category-toggle { font-weight: 600; }
+.category-toggle span { color: #8c3e35; font-weight: 600; }
+@media (max-width: 700px) { .category h2 { padding: 10px 10px; } }
+</style></head><body>
+
+<header class="site-header"><a class="brand" href="#">? &nbsp; Yuannan Tasty Garden</a><nav class="site-links"><a href="#">Our Story</a><a href="#menu">Menu</a><a href="#">Locations</a></nav></header>
+<header class="hero"><div><div class="eyebrow">Yuannan Tasty Garden</div><h1>Our Menu</h1><p>Explore the flavors of Yunnan, made for sharing and savoring.</p></div></header>
+<main class="wrap" id="menu"><div id="preview"></div></main>
+<script>
+const data = [{"id": "category-appetizer", "title": "Appetizer", "items": [["Cucumber Salad", "$12.99"], ["Bean Noodles In Chili Sauce", "$11.99"], ["Street Fried Yams", "$11.99"], ["Alcoholic Peanut", "$12.99"], ["Pepper Linen Clam", "$13.99"], ["Chicken Feet w.Pickled Peppers", "$12.99"], ["Chili Stirps In Clod Sauce", "$12.99"], ["Special Duck Neck", "$12.99"], ["Secret Duck Head", "$12.99"], ["Sichun Spicy Water Chicken", "$15.99"]]}, {"id": "category-fried-rice-noodle-rice-noodle", "title": "Fried Rice/Noodle/Rice Noodle", "items": [["Egg Fried Rice", "$13.99"], ["Han &amp; Egg Fried Rice", "$15.99"], ["Brand Fried Rice", "$15.99"], ["Brand Fried Noodle", "$15.99"], ["Chicken Fried Rice", "$14.99"], ["Chicken Fried Noodle", "$14.99"], ["Shrimp Fried Rice", "$14.99"], ["Shrimp Fried Noodle", "$14.99"], ["Beef Fried Rice", "$14.99"], ["Beef Fried Noodle", "$14.99"], ["Vegetable Fried Rice", "$13.99"], ["Vegetable Fried Noodle", "$13.99"], ["Special Yunnan Fried Rice Noodle", "$13.99"], ["Special Yunnan Fried Noodle", "$13.99"]]}, {"id": "category-rice-noodle-noodle-wonton", "title": "Rice Noodle/Noodle/Wonton", "items": [["Special Casserole Bridge Rice Noodle", "$15.99"], ["Special Egg Noodles", "$15.99"], ["Secret Braised Beef Rice Noodle", "$14.99"], ["Secret Braised Beef Egg Noodles", "$14.99"], ["Spiced Beef Brisket &amp; Chicken Rice Noodle", "$14.99"], ["Spiced Beef Brisket &amp; Chicken Egg Noodles", "$14.99"], ["Stir Fried Spiced Brisket Rice Noodle", "$14.99"], ["Stir Fried Spiced Brisket Egg Noodles", "$14.99"], ["Guiyang Spicy Chicken Rice Noodle", "$13.99"], ["Guiyang Spicy Chicken Egg Noodles", "$13.99"], ["Special Braised Pork Rice Noodle", "$13.99"], ["Special Braised Pork Egg Noodles", "$13.99"], ["Braised Pork w.Sour &amp; Spicy Rice Noodle", "$14.99"], ["Braised Pork w.Sour &amp; Spicy Egg Noodles", "$14.99"], ["Fry Sauce Rice Noodle", "$13.99"], ["Fry Sauce Egg Noodles", "$13.99"], ["Small Pot Rice Noodle", "$13.99"], ["Small Pot Egg Noodles", "$13.99"], ["Special Three Fresh Rice Noodle", "$14.99"], ["Special Three Fresh Egg Noodles", "$14.99"], ["Cold Rice Noodle", "$13.99"], ["Cold Egg Noodles", "$13.99"], ["Spicy w.Gndpork Rice Noodle", "$13.99"], ["Spicy w.Gndpork Egg Noodles", "$13.99"], ["Plain Spicy Rice Noodle", "$12.99"], ["Plain Spicy Egg Noodles", "$12.99"], ["Sour &amp; Spicy w.Gndpork Rice Noodle", "$13.99"], ["Sour &amp; Spicy w.Gndpork Egg Noodles", "$13.99"], ["Plain Sour &amp; Spicy w.Gndpork Rice Noodle", "$12.99"], ["Plain Sour &amp; Spicy w.Gndpor Egg Noodles", "$12.99"], ["Special Style Lobster Rice Noodle", "$12.99"], ["Special Style Lobster Egg Noodle", "$12.99"], ["Dan Dan Noodle", "$13.99"], ["Serve Wonton Soup By Hand", "$12.99"], ["Serve Soup Wonton Rice Noodle", "$13.99"], ["Wonton Egg Noodles", "$13.99"], ["Meat Dumpling In Spicy Sauce", "$12.99"], ["Hot &amp; Sour Wonton", "$12.99"], ["Rattan Pepper Dumpling", "$12.99"]]}, {"id": "category-shrimp", "title": "Shrimp", "items": [["Childe Kung Fu Spicy Crayfish", "$26.99"], ["Signature Spicy Shrimp", "$20.99"], ["Fried Prawns w.Pepper Sauce", "$20.99"], ["Lime Thai Shrimp", "$20.99"]]}, {"id": "category-chicken-duck", "title": "Chicken &amp; Duck", "items": [["Chongqing Spicy Chicken", "$20.99"], ["Kung Pao Chicken", "$18.99"], ["Diced Chicken w.Bean Paste Sauce", "$18.99"], ["Chicken Stir Fry", "$18.99"], ["Signature Roast Chicken", "$28.99"], ["Hot Pepper Chicken", "$24.99"], ["Local Chicken w.Spicy Rattan Pepper", "$24.99"]]}, {"id": "category-beef-lamb", "title": "Beef &amp; Lamb", "items": [["Stir Fry Fattened Cattle w.Mixed Mushroom", "$24.99"], ["Beef w.Green Onion", "$20.99"], ["Kunming Beef Stir Fry", "$20.99"], ["Cumin Beef", "$20.99"], ["Pickled Pepper Beef", "$20.99"], ["Fried Beef w.Cucumber", "$20.99"], ["Brush Tender Beef w.Fresh Pepper", "$21.99"], ["Golden Soup Beef Fat", "$24.99"], ["Lamb w.Green Onion", "$20.99"], ["Cumin Lamb", "$20.99"], ["Kunming Lamb Stir Fry", "$20.99"]]}, {"id": "category-fish", "title": "Fish", "items": [["Braised Garlic Head", "$19.99"], ["Fish w.Tofu", "$19.99"], ["Sweet &amp; Sour Fish", "$19.99"], ["Salt &amp; Pepper Fish", "$19.99"], ["Pepper Storm Fish Fillet", "$19.99"], ["Pickled Fish Fillet", "$19.99"], ["Casseroles Sauerkraut Fish", "$19.99"], ["Fish w.Spicy Rattan Pepper", "$19.99"], ["Boiling Fish w.Fragrance", "$19.99"], ["Sour Soup Live Fish", "$37.99"], ["Fish", "$37.99"], ["Boiling Live Fish w.Fragrance", "$37.99"]]}, {"id": "category-from-the-water", "title": "From The Water", "items": [["Roast Frog w.Garlic", "$39.99"], ["Pickled Pepper Frog", "$39.99"], ["Spicy Frog", "$39.99"], ["Hot Pot Diving Frog", "$39.99"], ["Flavored Squid Stirng", "$18.99"], ["Spicy Fish Maw", "$25.99"], ["Pickled Fish Maw", "$25.99"], ["Spicy Nail", "$18.99"], ["Drum Juice Nail", "$18.99"]]}, {"id": "category-pork", "title": "Pork", "items": [["Sizzling Pork Kidney Slices", "$23.99"], ["Sichuan Fragant Double Cooked Pork", "$18.99"], ["Pork w.Garlic Sauce", "$18.99"], ["Stone Pot Braised Pork In Soy Sauce", "$19.99"], ["Shredded Pork w.Green Pepper", "$18.99"], ["Shredded Pork w.Garlic Sauce", "$18.99"], ["Acai w.Spicy Slice Pork", "$20.99"], ["Spicy Pig Feet", "$22.99"], ["Hot &amp; Spicy Blood", "$23.99"], ["Braised Pig&#x27;s Large Intestines", "$19.99"], ["Mongolian Intestine", "$19.99"], ["Pickled Veg Fatty Intestines", "$19.99"], ["Hot Pepper Intestine", "$19.99"]]}, {"id": "category-spicy-boiled", "title": "Spicy Boiled", "items": [["Boiled Beef", "$20.99"], ["Boiled Mutton", "$20.99"], ["Chongqing Boiled Fish", "$19.99"], ["Chongqing Boiled Live Fish", "$37.99"], ["Boiled Intestine", "$19.99"], ["Boiled Two Style", "$23.99"]]}, {"id": "category-dry-pot", "title": "Dry Pot", "items": [["Dried Beef Pot", "$20.99"], ["Dry Pot Mutton", "$20.99"], ["Griddle Cooked Prawns", "$20.99"], ["Dry Pot Frog", "$39.99"], ["Dry Pot Ribs", "$19.99"], ["Griddle Pork Intestine", "$19.99"]]}, {"id": "category-vegetable", "title": "Vegetable", "items": [["Steamed Tofu Suffed w.Veg", "$22.99"], ["Cabbage Of Bean Vermicelli Fans", "$16.99"], ["Chili Preserved Egg w.Eggplant", "$17.99"], ["Eggplant w.Garlic Sauce", "$14.99"], ["Stir-Fried Eggplant With Jalapenos", "$17.99"], ["Mapo Tofu", "$14.99"], ["Home Style Bean Curd", "$14.99"], ["Shredded Potato w.Sour &amp; Spicy Sauce", "$14.99"], ["Shredded Potatoes w.Vinegar Sauce", "$14.99"], ["Szechuan Shredded Potato", "$14.99"], ["Shredded Potato w.Green Pepper", "$14.99"], ["Sauteed Chopped Potato", "$14.99"], ["Cabbage Torn w.Hot &amp; Sour Taste", "$14.99"], ["Fried Cabbage", "$14.99"], ["Cabbage In Vinegar", "$14.99"], ["Fried A Vegetable", "$16.99"], ["Garlic Fried A Veg", "$16.99"], ["Spicy Fried A Veg", "$16.99"], ["Sauteed Soybean Sprouts w.Garlic", "$17.99"], ["Sauteed Soybean Sprouts", "$17.99"], ["Sauteed Soybean Sprouts w.Pickled", "$18.99"], ["Sauteed Roman Lettuce w.Garlic", "$16.99"], ["White Roman Lettuce", "$16.99"], ["Fermented Bean Curd Lettuce", "$16.99"], ["Light Fried Spinach", "$15.99"], ["Fried Garlic Spinach", "$15.99"], ["Fried Asparagus Lettuce", "$18.99"], ["Spicy Lettuce Head", "$18.99"], ["Garlic  Lettuce Head", "$18.99"], ["Fry Rape Heart", "$16.99"], ["Serve w.Soup Rape Heart", "$18.99"], ["Scrambled Egg w.Leek", "$18.99"], ["Scrambled Egg w.Sichuan Pepper", "$18.99"], ["Scrambled Egg w.Tomato", "$16.99"]]}, {"id": "category-soup", "title": "Soup", "items": [["Braised Pork Feet Soup", "$19.99"], ["Yunnan Silkie Chicken Soup", "$19.99"], ["Tomato Soup w.Egg", "$15.99"], ["Tomato Soup w.egg", "$15.99"], ["Bean Curd Soup w.Green Veg", "$14.99"]]}, {"id": "category-rice", "title": "Rice", "items": [["Rice", "$1.50"]]}, {"id": "category-drinks", "title": "Drinks", "items": [["Soda", "$2.50"], ["Cola", "$2.50"], ["Diet Coke", "$2.50"], ["Sprite", "$2.50"], ["Fanta", "$2.50"], ["Arctic Soda", "$3.99"], ["Fresh Watermelon", "$4.99"], ["Fresh Watermelon Juice", "$15.99"], ["Old Beijing Yogurt", "$3.99"], ["Secret Plum Soup", "$3.99"], ["Secret Wax Gourt Tea", "$3.99"], ["Jdb Herbal Tea", "$3.50"], ["Ice Black Tea", "$3.50"], ["Air Forest Bubble Water", "$3.99"], ["Water", "$2.00"]]}, {"id": "category-dessert", "title": "Dessert", "items": [["Osmanthus Homemade Fermented Glutinous Rice Balls", "$13.99"], ["Green Bean Soup", "$4.50"], ["Crystal Sugar Tremella Snow Pear Soup", "$4.50"]]}];
+const shortNames = {'Fried Rice/Noodle/Rice Noodle':'Fried Rice & Noodles','Rice Noodle/Noodle/Wonton':'Noodles & Wonton'};
+const label = category => shortNames[category.title] || category.title;
+const preview = document.querySelector('#preview');
+let current = data[0].id;
+const options = () => data.map(c => `<option value="${c.id}">${label(c)}</option>`).join('');
+const collapsed = new Set();
+const sections = list => list.map(c => `<section class="category" id="${c.id}"><h2><button class="category-toggle" type="button" aria-expanded="${!collapsed.has(c.id)}" aria-controls="items-${c.id}">${c.title}<span aria-hidden="true">${collapsed.has(c.id) ? '+' : '&minus;'}</span></button></h2><div class="items" id="items-${c.id}" ${collapsed.has(c.id) ? 'hidden' : ''}>${c.items.map(([name,price]) => `<div class="item"><span>${name}</span><span class="price">${price}</span></div>`).join('')}</div></section>`).join('');
+const searchMarkup = `<div class="search-wrap"><span class="search-icon" aria-hidden="true">&#9906;</span><input class="search" type="search" placeholder="Search menu" aria-label="Search categories and dishes"><button class="search-clear" type="button" aria-label="Clear search">Clear</button></div>`;
+preview.innerHTML = `<div class="layout"><nav class="sidebar" aria-label="Menu categories"><h2>Explore the menu</h2>${searchMarkup}<div class="category-links">${data.map(c => `<a href="#${c.id}">${label(c)}</a>`).join('')}</div></nav><div class="menu-content"><div class="mobile-tools"><div class="mobile-select"><label for="mobile-category">Explore the menu</label><select id="mobile-category">${options()}</select></div>${searchMarkup}</div><div class="results-status" aria-live="polite"></div><div class="results">${sections(data)}</div></div></div>`;
+const inputs = [...preview.querySelectorAll('.search')];
+const decode = value => { const element = document.createElement('textarea'); element.innerHTML = value; return element.value.toLowerCase(); };
+inputs.forEach(input => input.addEventListener('input', () => {
+  const query = input.value.trim().toLowerCase();
+  inputs.forEach(other => { if (other !== input) other.value = input.value; });
+  const matches = data.map(category => {
+    const categoryMatches = decode(category.title).includes(query) || decode(label(category)).includes(query);
+    return {...category, items: categoryMatches ? category.items : category.items.filter(([name]) => decode(name).includes(query))};
+  }).filter(category => category.items.length);
+  preview.querySelector('.results').innerHTML = matches.length ? sections(matches) : '<p class="empty">No dishes or categories found. Try another search.</p>';
+  const ids = new Set(matches.map(category => category.id));
+  preview.querySelectorAll('.sidebar a').forEach(link => { link.hidden = !ids.has(link.hash.slice(1)); });
+  preview.querySelector('#mobile-category').innerHTML = matches.map(category => `<option value="${category.id}">${label(category)}</option>`).join('');
+  const count = matches.reduce((total, category) => total + category.items.length, 0);
+  preview.querySelector('.results-status').textContent = query ? `${count} ${count === 1 ? 'dish' : 'dishes'} found` : '';
+  updateActiveCategory();
+}));
+preview.querySelectorAll('.search-clear').forEach(button => button.addEventListener('click', () => {
+  const input = button.parentElement.querySelector('.search');
+  input.value = '';
+  input.dispatchEvent(new Event('input'));
+  input.focus();
+}));
+preview.querySelector('.results').addEventListener('click', event => {
+  const button = event.target.closest('.category-toggle');
+  if (!button) return;
+  const id = button.closest('.category').id;
+  const isExpanded = button.getAttribute('aria-expanded') === 'true';
+  if (isExpanded) collapsed.add(id); else collapsed.delete(id);
+  button.setAttribute('aria-expanded', String(!isExpanded));
+  button.querySelector('span').textContent = isExpanded ? '+' : '\u2212';
+  document.getElementById(button.getAttribute('aria-controls')).hidden = isExpanded;
+});
+preview.querySelector('#mobile-category').addEventListener('change', event => {
+  document.getElementById(event.target.value)?.scrollIntoView({behavior:'smooth'});
+});
+function updateActiveCategory() {
+  const visible = [...preview.querySelectorAll('.category')].filter(section => section.getBoundingClientRect().top <= 120);
+  const id = visible.at(-1)?.id || preview.querySelector('.category')?.id;
+  preview.querySelectorAll('.sidebar a').forEach(link => {
+    const active = link.hash === `#${id}`;
+    link.classList.toggle('active', active);
+    if (active) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  });
+}
+window.addEventListener('scroll', updateActiveCategory, {passive:true});
+updateActiveCategory();
+</script></body></html>
